@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# 환경변수 · 비밀값
+.env
+.env.local
+
+# 모델 가중치 · 데이터
+models/
+data/
+*.bin
+*.safetensors
+
+# OS · IDE
+.DS_Store
+.idea/
+.vscode/
+
+# 도구 상태 폴더
+.omc/
+
+# docs
+docs/information
