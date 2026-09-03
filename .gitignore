@@ -10,6 +10,7 @@ venv/
 # 환경변수 · 비밀값
 .env
 .env.local
+infra/.env
 
 # 모델 가중치 · 데이터
 models/
@@ -27,3 +28,23 @@ data/
 
 # docs
 docs/information
+
+# ── 추천 파트 (reco_architecture) ──────────────────────────────
+# 🔴 크롤 원본 209MB. GitHub 파일 한도(100MB)를 넘어 push 가 거부되고,
+#    reviews 에 작성자 닉네임 평문 177,318종이 들어 있다. DB 가 author_hash 로
+#    가리는 바로 그 값의 원본이라, 올라가면 REVIEW_SALT 를 지키는 의미가 사라진다.
+#    받는 곳은 raw_data/README.md.
+# 🔴 디렉터리째 제외하면(/raw_data/) 안쪽 README 를 '!' 로 되살릴 수 없다 —
+#    git 이 제외된 디렉터리 내부를 훑지 않기 때문이다. 그래서 /* 로 쓴다.
+/raw_data/*
+!/raw_data/README.md
+
+# 작업용 임시 폴더
+/scratchpad/
+
+# bench 산출물 — raw_data 로 재생성한다 (bench/README.md)
+/scripts/bench/out/
+
+# 실험 추적 · 산출물
+/artifacts/
+/mlruns/
